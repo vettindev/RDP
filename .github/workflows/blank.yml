@@ -229,45 +229,45 @@ jobs:
           
           
           Remove-LocalUser `
-          -Name "AISTV-PREMIUM" `
+          -Name "VETTINDEV" `
           -ErrorAction SilentlyContinue
           
           
           New-LocalUser `
-          -Name "AISTV-PREMIUM" `
+          -Name "VETTINDEV" `
           -Password $securePass `
           -AccountNeverExpires `
           -Description "Conta Premium AI STV"
           
           
           Set-LocalUser `
-          -Name "AISTV-PREMIUM" `
+          -Name "VETTINDEV" `
           -PasswordNeverExpires $true
           
           
           Add-LocalGroupMember `
           -Group "Administrators" `
-          -Member "AISTV-PREMIUM" `
+          -Member "VETTINDEV" `
           -ErrorAction SilentlyContinue
           
           
           Add-LocalGroupMember `
           -Group "Remote Desktop Users" `
-          -Member "AISTV-PREMIUM" `
+          -Member "VETTINDEV" `
           -ErrorAction SilentlyContinue
           
           
           Add-LocalGroupMember `
           -Group "Users" `
-          -Member "AISTV-PREMIUM" `
+          -Member "VETTINDEV" `
           -ErrorAction SilentlyContinue
           
           
           Enable-LocalUser `
-          -Name "AISTV-PREMIUM"
+          -Name "VETTINDEV"
           
           
-          echo "RDP_USER=AISTV-PREMIUM" >> $env:GITHUB_ENV
+          echo "RDP_USER=VETTINDEV" >> $env:GITHUB_ENV
           
           echo "RDP_PASS=$matKhau" >> $env:GITHUB_ENV
           
@@ -346,7 +346,7 @@ jobs:
           
           Write-Host "IP: $env:TAILSCALE_IP"
           
-          Write-Host "Usuário: AISTV-PREMIUM"
+          Write-Host "Usuário: VETTINDEV"
           
           Write-Host "Senha: $matKhau"
           
@@ -401,7 +401,7 @@ jobs:
           
           
           Disable-LocalUser `
-          -Name "AISTV-PREMIUM" `
+          -Name "VETTINDEV" `
           -ErrorAction SilentlyContinue
           
           
@@ -427,3 +427,4 @@ jobs:
           
           
           Write-Host "Limpeza concluída"
+          
